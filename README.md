@@ -1,2 +1,2 @@
 # VoiceAssistant
-Implement many versions of voice assistants using python
+Different implementations of voice assistants using python.
