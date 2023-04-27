@@ -12,6 +12,7 @@ import pywhatkit
 import os
 import yfinance as yf
 import pyjokes
+import wikipedia
 
 """
     Function to take a speech from a user, transform it into a text
@@ -107,27 +108,45 @@ def main():
     whileKey = True
     while(whileKey):
         command = transform().lower()
+        
         if 'youtube' in command:
             speaking("Starting Youtube now ...")
             webbrowser.open("https://www.youtube.com")
+            command = ""
+            continue
+        elif 'How are you?' in command:
+            speaking('''I'm fine
+                     hoping you're too
+                     Can I help You?
+                     ''')
+            continue
+        elif 'chess' in command:
+            speaking("Opening lee chess in few seconds . . .")
+            webbrowser.open("https://www.lichess.org")
+            command = ""
             continue
         elif 'webbrowser' in command:
             speaking("Starting the webbrowser now ...")
             webbrowser.open("https://www.google.com")
+            command = ""
             continue
         elif 'facebook' in command:
             speaking("Starting Facebook now ...")
             webbrowser.open("https://www.facebook.com")
+            command = ""
             continue
         elif 'linkedin' in command:
             speaking("Starting Linkedin now ...")
             webbrowser.open("https://www.linkedin.com")
+            command = ""
             continue
         elif 'day' in command:
             queryDay()
+            command = ""
             continue
         elif 'time' in command:
             queryTime()
+            command = ""
             continue
         elif 'stop' in command:
             speaking("Ok, I'll stop in few seconds")
@@ -135,7 +154,29 @@ def main():
         elif 'shutdown' in command:
             speaking("Ok, I'll shutdown in few seconds")
             break
-
+        elif 'wikipedia' in command:
+            speaking("checking wikipedia . . . . .")
+            command = command.replace("wikipedia", "")
+            response = wikipedia.summary(command, sentences=3)
+            speaking("Here is what I've found in wikipedia: ")
+            speaking(response)
+            command = ""
+            continue
+        elif 'search web' in command:
+            pywhatkit.search(command.replace('search web', ""))
+            speaking("Here is what I have found . . . . . ")
+            command = ""
+            continue
+        elif 'play' in command:
+            speaking(f'playing {command.replace("play","")}')
+            pywhatkit.playonyt('command.replace("play", "")')
+            command = ""
+            continue
+        elif 'joke' in command:
+            speaking(pyjokes.get_joke())
+            command = ""
+            continue
+        
 main()    
         
         
