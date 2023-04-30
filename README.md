@@ -1,2 +1,2 @@
-# VoiceAssistant
-Different implementations of voice assistants using python.
+# Python Projects
+Diffrent-useful projects implemented in Python.
