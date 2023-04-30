@@ -1,2 +1,2 @@
 # Python Projects
-Diffrent-useful projects implemented in Python.
+Many small projects implemented in Python.
