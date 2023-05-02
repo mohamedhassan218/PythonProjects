@@ -1,3 +1,10 @@
+"""
+    - Retrieve the string provided from the command line in command_list.
+    - Create 4 tuples to hold alphabets (lowercase and uppercase), numbers and symbols.
+    - Shuffle the tuples, store 30% of the number of characters in part1 and 20% in part2.
+    - Generate password that contains 60% of letters (lower and upper) and 40% of numbers and symbols.
+    - Shuffle the final password before joining its letters to be a string and return it.
+"""
 import string
 import random
 import sys
@@ -13,8 +20,8 @@ def generator():
     random.shuffle(lst3)
     random.shuffle(lst4)
     number_of_characters = int(command_list[1])
-    part1 = max(round(number_of_characters * (30 / 100)), 1)
-    part2 = max(round(number_of_characters * (20 / 100)), 1)
+    part1 = round(number_of_characters * (30 / 100))
+    part2 = round(number_of_characters * (20 / 100))
     password = []
     for i in range(part1):
         password.append(random.choice(lst1))
