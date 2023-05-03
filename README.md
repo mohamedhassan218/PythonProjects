@@ -6,3 +6,4 @@ This repo contains small projects with python include:
 - Password Generator
 - Image Compressor
 - Mobile Tracker
+- Key Logger
