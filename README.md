@@ -7,3 +7,4 @@ This repo contains small projects with python include:
 - Image Compressor
 - Mobile Tracker
 - Key Logger
+- QR Code Generator
