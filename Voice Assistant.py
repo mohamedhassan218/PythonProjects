@@ -175,8 +175,7 @@ def main():
         elif 'joke' in command:
             speaking(pyjokes.get_joke())
             command = ""
-            continue
-        
+            continue      
 main()    
         
         
